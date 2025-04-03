@@ -1,0 +1,48 @@
+body {
+    background: linear-gradient(45deg, #FFD700, #FF69B4);
+    font-family: 'Rubik Wet Paint', cursive;
+    text-align: center;
+    min-height: 100vh;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 0 0 15px pink;
+}
+
+.game-card {
+    border-radius: 25px;
+    padding: 25px;
+    margin: 15px;
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+}
+
+button {
+    background: #32CD32;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 16px;
+    margin: 10px;
+    font-family: inherit;
+}
+
+button.blocked {
+    background: #FF4444 !important;
+    cursor: not-allowed;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
