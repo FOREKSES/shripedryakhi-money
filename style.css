@@ -1,15 +1,58 @@
-/* Добавьте эти стили */
-.mines-controls {
-    display: grid;
-    gap: 10px;
-    margin: 15px 0;
+body {
+    background: linear-gradient(45deg, #FFD700, #FF69B4);
+    font-family: 'Rubik Bubbles', cursive;
+    text-align: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
+header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px pink;
+}
+
+.game-card {
+    border-radius: 25px;
+    padding: 25px;
+    margin: 15px;
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+.game-card:hover {
+    transform: scale(1.02);
+}
+
+button {
+    background: #32CD32;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+button.blocked {
+    background: #FF4444 !important;
+    cursor: not-allowed;
+}
+
+/* Слоты */
+.slots {
+    font-size: 40px;
+    margin: 20px;
+}
+
+/* Mines */
 #minesGrid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 5px;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .mine-cell {
@@ -19,7 +62,6 @@
     padding: 15px;
     cursor: pointer;
     font-size: 20px;
-    transition: 0.3s;
 }
 
 .mine-cell.revealed {
@@ -27,13 +69,8 @@
     cursor: not-allowed;
 }
 
-.mine-cell.safe {
-    background: #87CEEB;
-}
-
-.bet-controls input {
-    width: 80px;
-    padding: 8px;
-    border-radius: 10px;
-    margin-right: 10px;
+/* Блэкджек */
+#bjDealer, #bjPlayer {
+    font-size: 1.2em;
+    margin: 15px;
 }
