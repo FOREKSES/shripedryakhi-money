@@ -130,3 +130,21 @@ button:active {
         padding: 15px;
     }
 }
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    padding: 20px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 15px;
+}
+
+footer a {
+    color: #ff6b6b;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
