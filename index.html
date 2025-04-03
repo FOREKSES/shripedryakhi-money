@@ -2,69 +2,60 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>shripedryakhi.money</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>🎰 SHRIPEDRYAKHI.MONEY 💣</h1>
+        <h1>🎰 SHRIPEDRYAKHI 💣</h1>
         <div class="wallet">
             <p>💰 ŠKP: <span id="coins">1000</span></p>
-            <div class="bet-controls">
-                <input type="number" id="betAmount" value="50" min="10">
-                <button onclick="deposit()">ДЕПОЗИТ (+50 ŠKP)</button>
-                <button onclick="blockedWithdraw()" class="blocked">ВЫВОД (🚫)</button>
+            <div class="money-buttons">
+                <button onclick="deposit()">+50 ŠKP</button>
+                <button onclick="blockedWithdraw()" class="blocked">🚫 Вывод</button>
             </div>
         </div>
     </header>
 
     <div class="games">
         <!-- Слоты -->
-        <div class="game-card" style="background: #FFB6C1;">
+        <div class="game-card slots-card">
             <h2>🎪 СЛОТЫ x3</h2>
-            <div class="slots">
-                <span id="slot1">🎰</span>
-                <span id="slot2">🎰</span>
-                <span id="slot3">🎰</span>
+            <div class="slots-grid">
+                <div class="slot" id="slot1">🎰</div>
+                <div class="slot" id="slot2">🎰</div>
+                <div class="slot" id="slot3">🎰</div>
             </div>
-            <button onclick="playSlots()">Крутить (10 ŠKP)</button>
-            <p id="slotsMultiplier">Множитель: x1.00</p>
+            <button class="action-btn" onclick="playSlots()">Крутить (10 ŠKP)</button>
         </div>
 
         <!-- Mines -->
-        <div class="game-card" style="background: #87CEEB;">
+        <div class="game-card mines-card">
             <h2>💣 MINES</h2>
-            <div class="mines-controls">
-                <div>
-                    <label>Мин: </label>
-                    <select id="minesCount">
-                        <option>3</option>
-                        <option>5</option>
-                        <option selected>7</option>
-                    </select>
-                </div>
-                <div id="minesGrid"></div>
-            </div>
-            <button onclick="startMinesGame()">Старт (<span id="minesBet">50</span> ŠKP)</button>
-            <p id="minesMultiplier">Множитель: x1.00</p>
+            <select id="minesCount" class="mines-select">
+                <option value="3">3 мины</option>
+                <option value="5">5 мин</option>
+                <option value="7" selected>7 мин</option>
+            </select>
+            <div id="minesGrid"></div>
+            <button class="action-btn" onclick="startMinesGame()">Старт (50 ŠKP)</button>
         </div>
 
         <!-- Блэкджек -->
-        <div class="game-card" style="background: #98FB98;">
+        <div class="game-card bj-card">
             <h2>🃏 БЛЭКДЖЕК</h2>
-            <button onclick="startBlackjack()">Начать (30 ŠKP)</button>
-            <div id="bjDealer">Дилер: ...</div>
-            <div id="bjPlayer">Игрок: ...</div>
-            <button onclick="bjHit()">Взять карту</button>
-            <button onclick="bjStand()">Стоп</button>
+            <div class="bj-controls">
+                <button class="bj-btn" onclick="startBlackjack()">Начать (30 ŠKP)</button>
+                <button class="bj-btn" onclick="bjHit()">🗡 Взять</button>
+                <button class="bj-btn" onclick="bjStand()">🛑 Стоп</button>
+            </div>
+            <div id="bjDealer">Дилер: ?</div>
+            <div id="bjPlayer">Вы: ?</div>
             <div id="bjResult"></div>
         </div>
     </div>
-
-    <footer>
-        <p>Шуточный проект. ŠKP не имеют ценности! Создано для университета РГУТИС от @forekses и @MistyMurasaki</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
