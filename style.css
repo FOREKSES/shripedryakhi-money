@@ -1,48 +1,39 @@
-body {
-    background: linear-gradient(45deg, #FFD700, #FF69B4);
-    font-family: 'Rubik Wet Paint', cursive;
-    text-align: center;
-    min-height: 100vh;
+/* Добавьте эти стили */
+.mines-controls {
+    display: grid;
+    gap: 10px;
+    margin: 15px 0;
 }
 
-header {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 20px;
-    margin: 20px;
-    box-shadow: 0 0 15px pink;
+#minesGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    margin: 10px 0;
 }
 
-.game-card {
-    border-radius: 25px;
-    padding: 25px;
-    margin: 15px;
-    width: 300px;
-    transition: transform 0.3s;
-}
-
-.game-card:hover {
-    transform: scale(1.05);
-}
-
-button {
+.mine-cell {
     background: #32CD32;
-    border: none;
+    border: 2px solid #228B22;
+    border-radius: 5px;
     padding: 15px;
-    border-radius: 15px;
-    font-size: 16px;
-    margin: 10px;
-    font-family: inherit;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
 }
 
-button.blocked {
-    background: #FF4444 !important;
+.mine-cell.revealed {
+    background: #FF4444;
     cursor: not-allowed;
 }
 
-footer {
-    margin-top: 50px;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
+.mine-cell.safe {
+    background: #87CEEB;
+}
+
+.bet-controls input {
+    width: 80px;
+    padding: 8px;
+    border-radius: 10px;
+    margin-right: 10px;
 }

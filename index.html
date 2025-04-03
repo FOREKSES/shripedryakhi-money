@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <title>shripedryakhi.money</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>🎰 SHRIPEDRYAKHI.MONEY 🤑</h1>
+        <h1>💣 SHRIPEDRYAKHI.MINES 🤑</h1>
         <div class="wallet">
-            <p>💰 ШКИПИДОЛЛАРЫ: <span id="coins">1000</span> ŠKP</p>
-            <div class="money-buttons">
+            <p>💰 ŠKP: <span id="coins">1000</span></p>
+            <div class="bet-controls">
+                <input type="number" id="betAmount" value="50" min="10">
                 <button onclick="deposit()">ДЕПОЗИТ (+50 ŠKP)</button>
-                <button onclick="blockedWithdraw()" class="blocked">ВЫВОД (🚫 ЗАБЛОКИРОВАН)</button>
             </div>
         </div>
     </header>
@@ -21,37 +21,33 @@
     <div class="games">
         <!-- Слоты -->
         <div class="game-card" style="background: #FFB6C1;">
-            <h2>🎪 СЛОТЫ ОТ СОВУНЬИ 🦉</h2>
+            <h2>🎰 СЛОТЫ x3</h2>
             <div class="slots">
                 <span id="slot1">🎰</span>
                 <span id="slot2">🎰</span>
                 <span id="slot3">🎰</span>
             </div>
-            <button onclick="playSlots()">Крутить (10 ŠKP)</button>
+            <button onclick="playSlots()">Крутить (<span id="slotsBet">10</span> ŠKP)</button>
         </div>
 
-        <!-- Рулетка -->
-        <div class="game-card" style="background: #98FB98;">
-            <h2>🎡 РУЛЕТКА ОТ КРОША 🐇</h2>
-            <div id="rouletteResult">...</div>
-            <button onclick="playRoulette()">Старт (20 ŠKP)</button>
-        </div>
-
-        <!-- Блэкджек -->
+        <!-- Mines -->
         <div class="game-card" style="background: #87CEEB;">
-            <h2>🃏 БЛЭКДЖЕК ОТ ЛОСЯША 🦌</h2>
-            <div id="bjDealer">Дилер: ...</div>
-            <div id="bjPlayer">Игрок: ...</div>
-            <button onclick="bjHit()">Взять карту</button>
-            <button onclick="bjStand()">Остановиться</button>
-            <div id="bjResult"></div>
+            <h2>💣 MINES</h2>
+            <div class="mines-controls">
+                <div>
+                    <label>Мин: </label>
+                    <select id="minesCount">
+                        <option>3</option>
+                        <option>5</option>
+                        <option selected>7</option>
+                    </select>
+                </div>
+                <div id="minesGrid"></div>
+            </div>
+            <button onclick="startMinesGame()">Старт (<span id="minesBet">50</span> ŠKP)</button>
+            <p id="minesMultiplier">Множитель: x1.00</p>
         </div>
     </div>
-
-    <footer>
-        <p>🚫 Шуточный проект. Шкипидоллары не имеют ценности! Создано для университета.</p>
-        <img src="assets/smeshariki-bg.png" width="200" alt="Смешарики">
-    </footer>
 
     <script src="script.js"></script>
 </body>
